@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<head>
+  <title>Contact</title>
+  <style>
+    /* CSS Styles */
+
+    body {
+        font-family: Century G;
+      margin: 0;
+      padding: 0;
+    }
+    
+    header {
+      background-color: #0a1a42;
+      color: #fff;
+      padding: 10px;
+    }
+    
+    div a{
+      background-color: #061891;
+      padding: 10px;
+    }
+    
+    div ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    div ul li {
+      display: inline;
+      margin-right: 10px;
+    }
+
+    div ul li a{
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 20px;
+    border: 1px solid transparent;
+    transition: 0.6s ease;
+
+    }
+
+
+    div ul li a:hover{
+    background-color:  #fff;
+    color: #000;
+    }
+
+
+    .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        
+    
+    .content {
+      padding: 20px;
+    }
+    .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .contact-form textarea {
+            height: 120px;
+        }
+
+        .contact-form button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .contact-form button:hover{
+    background-color:  #000000;
+    color: #ffffff;
+    }
+
+    
+    footer {
+      background-color: #0a1a42;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+  </style>
+
+</head>
+<body>
+    <header>
+        <img class="logo" src="logo.png" align="right" height="70" width="70" px>
+        <h1>ASHIN VARGHESE</h1>
+      </header>
+      <div a>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="qualification.html">QUALIFICATION</a></li>
+            <li><a href="achievements.html">ACHIEVEMENTS</a></li>
+            <li><a href="hobbies.html">HOBBIES</a></li>
+            <li><a href="gallery.html">PHOTOS</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+          </ul>
+        </div a>
+    <div class="container">
+    <h1>Contact Me</h1>
+      <form class="contact-form" action="#" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+      </form>
+    </div>
+    <br>
+  <footer>
+    <p> My Personal Website.</p>
+    <p>Page Visits: <span id="page-visited"></span></p>
+    <p id="server-time"></p>
+  </footer>
+  <script>
+    setInterval(updateServerTime, 1000); // Update time every second
+
+    // Page visit counter
+    if (localStorage.getItem('pageVisits')) {
+      var count = parseInt(localStorage.getItem('pageVisits'));
+      count++;
+      localStorage.setItem('pageVisits', count);
+    } else {
+      localStorage.setItem('pageVisits', 0);
+    }
+    document.getElementById('page-visited').textContent = localStorage.getItem('pageVisits');
+
+    // Server time display
+    function updateServerTime() {
+      var serverTime = new Date();
+      var timeString = serverTime.toLocaleTimeString();
+      document.getElementById("server-time").textContent = "Server Time: " + timeString;
+    }
+  </script>
+
+</body>
+</html>

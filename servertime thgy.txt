@@ -1,0 +1,17 @@
+  <script>
+    // Page visit counter
+    if (localStorage.pageVisits) {
+      localStorage.pageVisits = Number(localStorage.pageVisits) + 1;
+    } else {
+      localStorage.pageVisits = 1;
+    }
+  
+    // Server time display
+    function updateServerTime() {
+      var serverTime = new Date();
+      var timeString = serverTime.toLocaleTimeString();
+      document.getElementById("server-time").textContent = "Server Time: " + timeString;
+    }
+  
+    setInterval(updateServerTime, 1000); // Update time every second
+  </script>
